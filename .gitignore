@@ -1,0 +1,5 @@
+.idea/
+target/
+*.iml
+# Avro Generated 
+gen-java

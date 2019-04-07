@@ -1,0 +1,39 @@
+{
+  "name": "DNode",
+  "namespace": "org.example.v3",
+  "type": "record",
+  "fields": [
+    {
+      "name": "prev",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "next",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "size",
+      "type": [
+        "null",
+        "long"
+      ],
+      "default": null
+    },
+    {
+      "name": "value",
+      "type": [
+        "null",
+        "bytes"
+      ],
+      "default": "\u0000"
+    }
+  ]
+}
