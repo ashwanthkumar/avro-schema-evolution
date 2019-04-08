@@ -4,15 +4,11 @@ import java.io.ByteArrayOutputStream
 import java.nio.ByteBuffer
 
 import org.apache.avro.io.{BinaryEncoder, DecoderFactory, EncoderFactory}
-import org.apache.avro.specific.{
-  SpecificData,
-  SpecificDatumReader,
-  SpecificDatumWriter,
-  SpecificRecord
-}
+import org.apache.avro.specific.{SpecificData, SpecificDatumReader, SpecificDatumWriter, SpecificRecord}
 
 import scala.reflect.ClassTag
 import scala.util.Try
+import scala.collection.JavaConversions._
 
 object Main {
   def main(args: Array[String]): Unit = {
@@ -24,6 +20,13 @@ object Main {
     compareWith[v2.DNode](version1) // need the patch for 1 extra field(s)
     compareWith[v3.DNode](version1) // need the patch for 2 extra field(s)
     compareWith[v3.DNode](version3) // happy path case
+
+
+    val siteTagsV1 = new v1.SiteTags(Map("t1" -> new v1.TagConfig("t1", 1L, 2L)))
+    val siteTagsV2 = new v2.SiteTags(Map("t1" -> new v2.TagConfig("t1", 1L, 2L, 3L)))
+
+    compareWith[v1.SiteTags](siteTagsV2)
+    compareWith[v2.SiteTags](siteTagsV1)
   }
 
   def compareWith[To <: SpecificRecord: ClassTag](

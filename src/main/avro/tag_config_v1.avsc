@@ -1,0 +1,39 @@
+{
+  "name": "SiteTags",
+  "namespace": "org.example.v1",
+  "type": "record",
+  "fields": [
+    {
+      "name": "tags",
+      "type": {
+        "type": "map",
+        "values": [
+          {
+            "name": "TagConfig",
+            "type": "record",
+            "fields": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "freshnessDuration",
+                "type": [
+                  "long",
+                  "null"
+                ]
+              },
+              {
+                "name": "expirationTimestamp",
+                "type": [
+                  "long",
+                  "null"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
