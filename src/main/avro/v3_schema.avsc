@@ -30,8 +30,8 @@
     {
       "name": "value",
       "type": [
-        "null",
-        "bytes"
+        "bytes",
+        "null"
       ],
       "default": "\u0000"
     }

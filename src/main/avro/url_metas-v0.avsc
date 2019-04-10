@@ -1,0 +1,172 @@
+{
+  "name": "URLMetas",
+  "namespace": "org.example.v0",
+  "type": "record",
+  "fields": [
+    {
+      "name": "tagMetas",
+      "type": {
+        "type": "map",
+        "values": [
+          {
+            "name": "EuclidMeta",
+            "type": "record",
+            "fields": [
+              {
+                "name": "seederState",
+                "type": [
+                  {
+                    "name": "SeederState",
+                    "type": "record",
+                    "fields": [
+                      {
+                        "name": "type",
+                        "type": "string"
+                      },
+                      {
+                        "name": "id",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "null"
+                ]
+              },
+              {
+                "name": "searchMeta",
+                "type": [
+                  {
+                    "name": "SBCSearchMeta",
+                    "type": "record",
+                    "fields": [
+                      {
+                        "name": "jobId",
+                        "type": "string"
+                      },
+                      {
+                        "name": "pageNo",
+                        "type": "int"
+                      },
+                      {
+                        "name": "position",
+                        "type": "int"
+                      },
+                      {
+                        "name": "searchTerm",
+                        "type": "string"
+                      },
+                      {
+                        "name": "searchType",
+                        "type": {
+                          "name": "SearchType",
+                          "type": "enum",
+                          "symbols": [
+                            "UPC",
+                            "SEARCH_TERM"
+                          ]
+                        }
+                      },
+                      {
+                        "name": "useCase",
+                        "type": {
+                          "name": "UseCase",
+                          "type": "enum",
+                          "symbols": [
+                            "SEARCH_CACHE",
+                            "ENRICHMENT"
+                          ]
+                        }
+                      },
+                      {
+                        "name": "maxPage",
+                        "type": "int"
+                      }
+                    ]
+                  },
+                  "null"
+                ]
+              },
+              {
+                "name": "source",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              {
+                "name": "pageType",
+                "type": [
+                  {
+                    "name": "PageType",
+                    "type": "enum",
+                    "symbols": [
+                      "NORMAL",
+                      "SITEMAP",
+                      "LISTING_DISCOVERY",
+                      "SEARCH_BASED"
+                    ]
+                  },
+                  "null"
+                ]
+              },
+              {
+                "name": "isListing",
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              {
+                "name": "currentDepth",
+                "type": [
+                  "int",
+                  "null"
+                ]
+              },
+              {
+                "name": "maxDepth",
+                "type": [
+                  "int",
+                  "null"
+                ]
+              },
+              {
+                "name": "forwardLinks",
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              {
+                "name": "tag",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              {
+                "name": "isLeafPage",
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              {
+                "name": "additionalData",
+                "type": [
+                  {
+                    "type": "map",
+                    "values": [
+                      "string"
+                    ]
+                  },
+                  "null"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
